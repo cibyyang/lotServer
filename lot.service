@@ -1,0 +1,11 @@
+[Unit]
+Description=AppEx LotServer
+After=network.target
+[Service]
+Type=forking
+ExecStart=/appex/bin/lotServer.sh start
+ExecReload=/appex/bin/lotServer.sh restart
+ExecStop=/appex/bin/lotServer.sh stop
+PrivateTmp=true
+[Install]
+WantedBy=multi-user.target
